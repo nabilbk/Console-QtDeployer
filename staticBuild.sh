@@ -41,7 +41,7 @@ find $BASE_DIR/QuasarAppLib -type f -name '*.a*' -exec rm {} \;
 find $BASE_DIR/Deploy -type f -name '*.a*' -exec rm {} \;
 
 rm $BASE_DIR/QuasarAppLib/Makefile.QuasarApp
-rm -rdf $RELEASE_DIR
+rm -rf $RELEASE_DIR
 
 cd $BASE_DIR/qtBase
 
@@ -52,7 +52,7 @@ do
 	    echo "$var - ok"
 	else
 	    echo "$var - not exits!. rebuild qt ..."
-            rm -rdf $BASE_DIR/$QT_DIR
+            rm -rf $BASE_DIR/$QT_DIR
             git clean -xdf    
             ./configure -confirm-license -prefix $BASE_DIR/$QT_DIR -release -optimize-size -static -no-opengl -no-openssl -opensource -nomake tests -nomake examples -no-gui -no-widgets -no-dbus -no-accessibility    
             make install -j$(nproc)
@@ -61,7 +61,7 @@ do
 done
 	
 cd ..
-rm -rdf $BASE_DIR/build
+rm -rf $BASE_DIR/build
 
 export PATH=$PATH:$BASE_DIR/$QT_DIR
 $BASE_DIR/$QT_DIR/bin/qmake -r QMAKE_LFLAGS+="-static -static-libgcc -static-libstdc++" $BASE_DIR/CQtDeployer.pro DEFINES+="$SNAP_DEFINES" DEFINES+=WITHOUT_BASE_TESTS
