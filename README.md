@@ -3,7 +3,7 @@
 
 ****************************
 ## What is CQtDeployer
-The CQtDeployer is  for extract all depends library of executable and create launch script for your application.
+The CQtDeployer is  for extract all depends  of executable and create launch script for your application.
 
 
 Key differences of this program:
