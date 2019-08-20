@@ -748,10 +748,10 @@ void Deploy::addEnv(const QString &dir) {
         return;
     }
 
-    if (dir.contains(appDir)) {
-        QuasarAppUtils::Params::verboseLog("is cqtdeployer dir!: " + dir + " app dir : " + appDir);
-        return;
-    }
+//     if (dir.contains(appDir)) {
+//         QuasarAppUtils::Params::verboseLog("is cqtdeployer dir!: " + dir + " app dir : " + appDir);
+//         return;
+//     }
 
     if (!QFileInfo(dir).isDir()) {
         QuasarAppUtils::Params::verboseLog("is not dir!! :" + dir);
